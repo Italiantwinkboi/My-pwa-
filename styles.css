@@ -1,10 +1,30 @@
-:root{--bg:#f6fbff;--card:#fff;--accent:#2b6cb0;--muted:#6b7280;}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui;background:var(--bg);color:#04203a;padding:24px;}
-main{max-width:720px;margin:auto}
-.title{margin-bottom:16px;font-size:18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
-.tile{text-decoration:none;background:#e8f3ff;padding:16px;border-radius:8px;font-weight:600;text-align:center;color:#04203a}
-.box{width:100%;margin:12px 0;padding:10px;border-radius:6px;border:1px solid #cbd5e1;font-size:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui;background:#f6fbff;color:#04203a;padding-bottom:70px}
+main{padding:20px;max-width:720px;margin:auto}
+.title{font-size:18px;margin-bottom:16px;font-weight:700}
+
+/* Tab Bar */
+.tabbar{
+  position:fixed;bottom:0;left:0;width:100%;height:60px;
+  background:white;border-top:1px solid #cbd5e1;
+  display:flex;justify-content:space-around;align-items:center;
+}
+.tabbar a{flex:1;text-align:center;text-decoration:none;font-size:22px}
+.tab-label{display:block;font-size:11px;font-weight:600;margin-top:3px;color:#04203a}
 .dark{background:#0a0f18;color:white}
-.dark .tile{background:#1a2233;color:white}
+.dark .tabbar{background:#1a2233;border-top:1px solid #334155}
+.dark .tab-label{color:white}
+
+/* UI */
+.box{
+  width:100%;margin:12px 0;padding:12px;border-radius:6px;
+  border:1px solid #cbd5e1;font-size:14px;min-height:120px
+}
+button{
+  width:100%;background:#2b6cb0;color:white;border:0;
+  padding:12px;border-radius:8px;font-weight:600;margin-top:10px
+}
+
+/* Page Fade Animation */
+.page{animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
