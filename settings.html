@@ -1,9 +1,16 @@
-<!doctype html>
-<html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
-<body>
-<main><h2>Theme</h2>
-<button onclick="dark()">Dark</button>
-<button onclick="light()">Light</button></main>
+<!doctype html><html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
+<body class="page">
+<main>
+  <h2 class="title">Settings</h2>
+  <button onclick="dark()">Enable Dark Mode</button>
+  <button onclick="light()">Enable Light Mode</button>
+</main>
+<nav class="tabbar">
+  <a href="index.html">📊<span class="tab-label">Home</span></a>
+  <a href="notes.html">📝<span class="tab-label">Notes</span></a>
+  <a href="tasks.html">✅<span class="tab-label">Tasks</span></a>
+  <a href="settings.html">⚙️<span class="tab-label">Settings</span></a>
+</nav>
 <script>
 function dark(){localStorage.theme="dark";document.body.className="dark"}
 function light(){localStorage.theme="";document.body.className=""}
