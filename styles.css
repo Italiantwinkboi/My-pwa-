@@ -1,3 +1,4 @@
+.container{max-width:var(--vw)}
 :root{
   --bg:#f6fbff;--card:#fff;--accent:#2b6cb0;--muted:#6b7280;--radius:12px;
   --gap:12px;--maxw:720px;
