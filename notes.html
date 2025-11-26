@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<main><h2>Notes</h2>
+<textarea id="noteBox" class="box"></textarea>
+<button onclick="saveNote()">Save</button></main>
+<script>
+const k="pwa-note";
+noteBox.value=localStorage[k]||"";
+function saveNote(){localStorage[k]=noteBox.value}
+</script>
+</body></html>
