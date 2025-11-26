@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<main><h2>Tasks</h2>
+<input id="taskInput" class="box"/>
+<button onclick="addTask()">Add</button>
+<ul id="taskList"></ul></main>
+<script>
+const k="pwa-tasks";
+let t=JSON.parse(localStorage[k]||"[]");
+function save(){localStorage[k]=JSON.stringify(t)}
+function addTask(){if(!taskInput.value)return;t.push({x:taskInput.value,d:0});taskInput.value="";save();r()}
+function r(){taskList.innerHTML=t.map((e,i)=>`<li onclick="c(${i})">${e.d?"✔":"⬜"} ${e.x}</li>`).join("")}
+function c(i){t[i].d=!t[i].d;save();r()}
+r();
+</script>
+</body></html>
