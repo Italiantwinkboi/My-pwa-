@@ -1,0 +1,1 @@
+const CACHE='v1'; self.addEventListener('fetch',e=>{e.respondWith(caches.open(CACHE).then(c=>c.match(e.request).then(r=>r||fetch(e.request))))});
