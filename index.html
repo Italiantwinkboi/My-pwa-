@@ -1,24 +1,22 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>My PWA</title>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
 <link rel="manifest" href="manifest.webmanifest"/>
-<link rel="stylesheet" href="styles.css"/></head><body>
-<main>
-  <h1 class="title">Dashboard</h1>
-</main>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+<main class="container page" id="app"></main>
 
 <nav class="tabbar">
-  <a href="index.html">📊<span class="tab-label">Home</span></a>
-  <a href="notes.html">📝<span class="tab-label">Notes</span></a>
-  <a href="tasks.html">✅<span class="tab-label">Tasks</span></a>
-  <a href="settings.html">⚙️<span class="tab-label">Settings</span></a>
+  <a href="#" class="tab" id="tabNotes" data-href="/My-pwa-/notes">📝<span>Notes</span></a>
+  <a href="#" class="tab" id="tabTasks" data-href="/My-pwa-/tasks">✅<span>Tasks</span></a>
+  <a href="#" class="tab" id="tabSettings" data-href="/My-pwa-/settings">⚙️<span>Settings</span></a>
 </nav>
+
 <script src="app.js"></script>
-</body></html>
+</body>
+</html>
