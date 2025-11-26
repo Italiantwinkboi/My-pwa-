@@ -1,12 +1,21 @@
-<!doctype html>
-<html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
+<!doctype html><html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
 <body>
-<main><h2>Notes</h2>
-<textarea id="noteBox" class="box"></textarea>
-<button onclick="saveNote()">Save</button></main>
+<main>
+  <h2 class="title">Notes</h2>
+  <input id="noteName" class="box" placeholder="Note title (ex: ideas)"/>
+  <textarea id="noteBox" class="box" placeholder="Write..."></textarea>
+  <button onclick="save()">Save Note</button>
+  <ul id="noteFiles" style="margin-top:16px;font-size:13px"></ul>
+</main>
+
+<script src="app.js"></script>
 <script>
-const k="pwa-note";
-noteBox.value=localStorage[k]||"";
-function saveNote(){localStorage[k]=noteBox.value}
+const el=id=>document.getElementById(id);
+const draw=()=>noteFiles.innerHTML=listNotes().map(n=>`<li onclick="load('${n}')">📄 ${n}</li>`).join("");
+function save(){ if(!noteName.value)return; saveNote(noteName.value,noteBox.value); draw(); }
+function load(n){ noteBox.value=getNote(n); noteName.value=n; }
+function listNotes(){ return el("noteName") && window.listNotes?window.listNotes():Object.keys(JSON.parse(localStorage["pwa-notes"]||"{}")) }
+draw();
+draw();
 </script>
 </body></html>
