@@ -1,0 +1,12 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<main><h2>Theme</h2>
+<button onclick="dark()">Dark</button>
+<button onclick="light()">Light</button></main>
+<script>
+function dark(){localStorage.theme="dark";document.body.className="dark"}
+function light(){localStorage.theme="";document.body.className=""}
+if(localStorage.theme==="dark")dark();
+</script>
+</body></html>
