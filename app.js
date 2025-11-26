@@ -1,3 +1,8 @@
+function fit(){
+  document.documentElement.style.setProperty('--vw', window.innerWidth + 'px');
+}
+window.addEventListener('resize', fit);
+fit();
 // Minimal IndexedDB helper (promised)
 const DB_NAME='pwa-db', DB_VER=1; let dbP = new Promise((res,rej)=>{
   let r = indexedDB.open(DB_NAME,DB_VER);
